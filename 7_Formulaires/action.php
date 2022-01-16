@@ -26,6 +26,16 @@ else {
     $nom = "euhhhh";
     echo "<p>C'est vide pour le nom !</p>";
 }
+
+// Est-ce qu'une valeur couleur a été soumise ?
+if (!empty($_GET['couleur'])) {
+    $couleur = $_GET['couleur'];
+}
+// Dans le cas contraire :
+else {
+    $couleur = "euhhhh";
+    echo "<p>C'est vide pour la couleur !</p>";
+}
 ?>
 <body>
 
@@ -33,5 +43,8 @@ else {
     
 <?php var_dump($nom);
 var_dump($age); ?>
+
+<div style="background-color:<?= $couleur ?>; min-height: 50px"></div>
+
 </body>
 </html>
