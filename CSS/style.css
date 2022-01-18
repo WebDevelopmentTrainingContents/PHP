@@ -1,0 +1,231 @@
+/* Pour le test des classes, fichier fonctions : */
+
+.class {
+color: forestgreen;
+font-size: xx-large;
+}
+
+body{
+    /* le degradé pour la couleur de fond de body */
+    background: linear-gradient(#d9d9d9, #ffffff);
+}
+
+.container{
+    /* la bordure ombrée de container */
+    border: solid 1px grey;
+    box-shadow: 2px 2px 5px grey;
+}
+
+/* header--------------------------------------------------------------- */
+
+header{
+    background: white;
+}
+
+/* col de gauche----------- */
+.titre{
+    /* le logo qui va s'afficher à coté du h1 */
+    background: url(../img/logo.png)no-repeat;
+    font-weight: bold;
+    font-style: italic;
+    /* permet de séparer le logo du texte */
+    padding-left: 3rem;
+}
+
+.titre a{
+    color: black;
+    /* retirer les traits sous les liens */
+    text-decoration: none;
+}
+
+.slogan{
+    font-style: italic;
+    color: #f691e6;
+    padding-left: 3rem;
+}
+/* fin de col gauche--------- */
+
+/* col centrale--------- */
+.aide{
+    /* me permet de fixer/réduire la marge entre le haut du header avec la nav en dessous */
+    height: 90px;
+}
+
+.help{
+    /* permet de supprimer le margin bottom de ce bloc (et remonter celui du dessous comme sur la maquette */
+    margin: 0!important;
+    color: #53d2f6;
+}
+
+.sav{
+    /* position relative pour pemettre au texte de venir se nicher dans cet emplacement */
+    position: relative;
+}
+
+.telephone{
+    /* le texte en absolute pour le remonter dans son espace dédié */
+    position: absolute;
+    top: 0.1rem;
+    left: 3rem;
+    color: #53d2f6;
+    font-size: 1rem;
+    /* un bold moins gras */
+    font-weight: 600;
+}
+
+.horaires{
+    color: lightslategray;
+    font-style: italic;
+}
+/* fin col centrale--------- */
+
+/* col de droite---------- */
+.compte{
+    background: #53d2f6;
+    /* pour séparer de l'onglet du dessous */
+    margin-bottom: .1rem;
+}
+
+
+.panier{
+    /* l'image du panier en background */
+    background: url(../img/article.png)no-repeat;
+    padding-left: 4rem;
+    background-color: #53d2f6;
+    /* ce margin sera utile en petits ecrans */
+    margin-bottom: .1rem;
+}
+
+.texte-panier{
+    /* pour positionner le texte par rapport à l'image */
+    padding-top: .8rem;
+}
+
+.compte a, .texte-panier a{
+    /* retirer le souligné */
+    text-decoration: none;
+    color: white;
+}
+/* fin col de droite---------- */
+
+/* la nav--------------- */
+.navbar{
+    background: #53d2f6;
+}
+
+.navbar ul li a{
+    color: white !important;
+    /* un bold moins gras */
+    font-weight: 600;
+    line-height: .6rem;
+}
+
+.active{
+/*  l'onglet actif    */
+    background: #f583e3;
+}
+/* fin de nav---------- */
+/* fin de header------------------------------------------------------------ */
+
+/* main---------------------------------------------------------------------- */
+
+#test {
+    display: block;
+    color : red;
+}
+
+main{
+    background: white;
+}
+
+.bandeau img{
+    /* sipprimer du padding qui crée sinon des décalages */
+    padding: 0!important;
+}
+
+.services{
+    /* important ci-dessous en responsive */
+    margin-right: 0!important;
+    margin-left: 0!important;
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
+
+.services p{
+    font-size:  .9rem;
+}
+/* colonne paiement */
+.paiement h2, .qsn h2, .livraison h2{
+    /* couleur commune aux h2 */
+    color:#53d2f6;
+}
+/* fin colonne paiement */
+
+/* colonne qsn */
+.qsn p{
+    /* supprimer une marge inutile qui crée des décalages non voulus */
+    margin-bottom: 0;
+}
+/* fin colonne qsn */
+
+/* colonne livraison */
+.camion{
+    /* icone du camion en background */
+    background: url(../img/camion.png)no-repeat;
+}
+
+.echange{
+    /* icone des fleches en background */
+    background: url(../img/echange.png)no-repeat;
+}
+/* fin de livraison */
+
+/* début de la row pour les produits */
+.rangee-produits{
+    /* important pour bien la centrer, notamment en responsive */
+    margin-right: 0!important;
+    margin-left: 0!important;
+}
+
+.produits{
+    /* la borduire et ses effets pour les produits */
+    border: solid 1px gray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+.produits h2{
+    /* le pattern en bg-image pour le h2 */
+    background: url(../img/fond.png);
+}
+
+.produits .texte-produits{
+    /* pour justifier le texte et supprimer une marge indésirable */
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.produits .lien-produits{
+    /* marge indésirable a enlever */
+    margin: 0;
+}
+
+.lien-produits a{
+    color:#53d2f6;
+}
+/* fin des produits */
+/* fin de main---------------------------------------------------------------------- */
+
+/* footer--------------------------------------------------------------------- */
+.site-map{
+    background: #53d2f6;
+    /* colorer en blanc les tirets */
+    color: white;
+}
+
+.site-map a{
+    /* colorer et supprimer les soulignés des liens */
+    color: white;
+    text-decoration: none;
+}
+/* fin de footer--------------------------------------------------------------------- */

@@ -19,8 +19,11 @@ var_dump($surnom);
 $couleursPref = ['bleu, vert, jaune'];
                         $nbCouleurs = count($couleursPref);
 echo $nbCouleurs;
-$date = date('d/m/y');
+
 $heure = date('h:i:s');
+
+//-----------------------------------
+
 ?>
 
     <!-- Stockez maintentant les deux premières lettres de la variable utilisée pour le prénom dans une variable surnom et restituez la dans le code HTML suivant : -->
@@ -39,6 +42,8 @@ $heure = date('h:i:s');
     Indice : concaténation -->
 
     <p>Il est XX heure(s) et XX minute(s).</p>
+
+
 </body>
 
 </html>
