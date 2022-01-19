@@ -7,6 +7,13 @@
     <title>Page destination formulaire PHP</title>
 </head>
 <?php
+
+echo($_POST);
+echo $_POST['prenom'];
+echo"<br>";
+echo $_POST['nom'];
+echo"<br>";
+echo $_POST['age'];
 // Est-ce qu'une valeur age a été soumise ?
 if (!empty($_POST['age'])) {
     $age = $_POST['age'];

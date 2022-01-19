@@ -1,3 +1,5 @@
+<?= "Mon cookie contient : " . $_COOKIE['id']; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,7 +18,7 @@
 <body>
 
 <?php
-
+$liens = ["<a href=\"#\">Newsletter</a> - " , "<a href=\"#\">Promotions</a> - " , "<a href=\"#\">Nouveaux produits</a> - " , "<a href=\"#\">Meilleures ventes</a> - " , "<a href=\"#\">Mentions légales</a> - " , "<a href=\"#\">CGV</a> - " , "<a href=\"#\">Contactez-nous</a>" ];
 $arrayNav = ["Accueil","ID KDO","Maison","Techno","Bijoux","Vêtements"];
 $heure = date('h:i:s');
 $date = date('d/m/y');
@@ -32,8 +34,64 @@ function maFonction($mot1, $mot2, $mot3) {
     echo $mot3;
 };
 
+// Est-ce qu'une valeur nom a été soumise ?
+if (!empty($_GET['titre'])) {
+    $titre = $_GET['titre'];
+}
+// Dans le cas contraire :
+else {
+    $titre = "Pas de titre";
+  
+}
+
+//-----POST 
+
+/* // Est-ce qu'une valeur nom a été soumise ?
+if (!empty($_POST['titre1'])) {
+    $titre1 = $_POST['titre1'];
+}
+// Dans le cas contraire :
+else {
+    $titre1 = "Pas de titre 1";
+  
+}
+
+// Est-ce qu'une valeur nom a été soumise ?
+if (!empty($_POST['titre2'])) {
+    $titre2 = $_POST['titre2'];
+}
+// Dans le cas contraire :
+else {
+    $titre2 = "Pas de titre 2";
+  
+}
+
+// Est-ce qu'une valeur nom a été soumise ?
+if (!empty($_POST['titre3'])) {
+    $titre3 = $_POST['titre3'];
+}
+// Dans le cas contraire :
+else {
+    $titre3 = "Pas de titre 3";
+  
+} */
+
+// Condition raccourcie :
+
+if (!empty($_POST['titre1']) && !empty($_POST['titre2']) && !empty($_POST['titre3'])) {
+    $titre1 = $_POST['titre1'];
+    $titre2 = $_POST['titre2'];
+    $titre3 = $_POST['titre3'];
+    $cookie = $_POST['cookie'];
+}
+else {
+    $titre1 = $titre2 = $titre3 = "Renseignez tous les titres"; 
+}
+
+echo $cookie;
+
 ?>
- 
+
 
   
 
@@ -53,7 +111,7 @@ function maFonction($mot1, $mot2, $mot3) {
                     <div class="col-md-5 logo-titre-slogan">
                         <!-- h1 est un lien cliquable (retour vers l'accueil qlq soit la page du site ou je me trouve) -->
                         <!-- le logo sera mis en bg-image dans le css -->
-                        <h1 class="titre"><a href="#">Ma Boutique</a></h1>
+                        <h1 class="titre"><a href="#"><?php echo $titre ?></a></h1>
                         <!-- h6 pour la font-size -->
                         <h2 class="slogan h6">Vente en ligne : Mode, Tendance et Déco</h2>
                         <p id="test">Il est : <?= $heure ?></p>
@@ -157,7 +215,7 @@ function maFonction($mot1, $mot2, $mot3) {
                     <!-- colonne col-md-2 (coulissera ensuite) avec sa bordure droite (end), grise. Avec un pading sur l'axe des y -->
                     <div class="col-md-2 py-2 border-end border-secondary paiement">
                         <!-- h2 avec une font-size h4 -->
-                        <h2 class="h4">Paiement Sécurisé</h2>
+                        <h2 class="h4"><?= $titre1 ?></h2>
                         <p>Reglez vos achats en toute sérénité sur maboutique.com</p>
                         <img class="img-fluid" src="img/paiement.png" alt="les différents cartes de crédit acceptées pour payer en ligne">
                     </div>
@@ -167,7 +225,7 @@ function maFonction($mot1, $mot2, $mot3) {
                     <!-- colonne col-md-8 (coulissera ensuite) avec sa bordure droite (end), grise. Avec un pading sur l'axe des y et un autre sur l'axe des x qui disparaitra sur petits ecrans (px-md-4) -->
                     <div class="col-md-8 px-md-4 py-2 border-end border-secondary qsn">
                         <!-- h2 avec une font-size h4 -->
-                        <h2 class="h4"><?= "Qui " . $mots[0] . "-nous " . $mots[1] ?></h2>
+                        <h2 class="h4"><?= $titre2 ?></h2>
                         <p>
 
                         
@@ -183,7 +241,7 @@ function maFonction($mot1, $mot2, $mot3) {
                     <!-- colonne col-md-2 (coulissera ensuite). Avec un pading sur l'axe des y -->
                     <div class="col-md-2 py-2 livraison">
                         <!-- h2 avec une font-size h4 -->
-                        <h2 class="h4">Services</h2>
+                        <h2 class="h4"><?= $titre3 ?></h2>
                         <!-- row avec du padding vertical pour les livraisons -->
                         <div class="row py-1">
                             <!-- col qui accueillera ensuite le bg img du camion en css, c'est la raison pour laquelle je suis donne du margin start (ms) et padding statrt (ps) ici, pour séparer les différents éléments entre eux -->
@@ -293,7 +351,7 @@ function maFonction($mot1, $mot2, $mot3) {
             <!-- row pour les liens navigation, avec un padding top -->
             <nav class="row pt-2 site-map">
                 <!-- je centre tout le paragraphe -->
-                <p class="text-center"><a href="#">Newsletter</a> - <a href="#">Promotions</a> - <a href="#">Nouveaux produits</a> - <a href="#">Meilleures ventes</a> - <a href="#">Mentions légales</a> - <a href="#">CGV</a> - <a href="#">Contactez-nous</a></p>
+                <p class="text-center"><?php foreach($liens as $lien){echo $lien;} ?></p>
             </nav>
 
         </footer>

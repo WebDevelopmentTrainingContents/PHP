@@ -11,11 +11,11 @@
 
 <!-- Formulaire GET :  
  -->
-            <form action="action.php" method="GET">
+            <form action="../azzaro.php" method="GET">
             <input
                 type="text"
-                name="nom"
-                placeholder="Votre nom"
+                name="titre"
+                placeholder="Votre titre"
                 value=""
             />
         </form>

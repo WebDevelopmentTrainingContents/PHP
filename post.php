@@ -11,7 +11,7 @@ setcookie('id', 'JoTestCookie'); ?>
 <body>
     
 <!-- Formulaire POST :
- -->        <form action="../azzaro.php" method="POST">
+ -->        <form action="azzaro.php" method="POST">
                 <input
                 type="text"
                 name="titre1"
@@ -31,7 +31,12 @@ setcookie('id', 'JoTestCookie'); ?>
                 placeholder="titre3"
                 value="titre 3 defaut"
             />
-         
+            <input
+                type="text"
+                name="cookie"
+                placeholder="titre3"
+                value=""
+            />
             <input
                 type="submit"
                 name="envoi"
