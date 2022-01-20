@@ -1,0 +1,1 @@
+<div style="height:400px; background-color: green;"><h1>Ma boutique</h1><p>Vous cherchez un <?= $choixProduit ?></p></div>

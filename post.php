@@ -1,5 +1,7 @@
 <?php
-setcookie('id', 'JoTestCookie'); ?>
+setcookie('id', 'jo'); 
+setcookie('produit', $_POST['cookie']); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +11,16 @@ setcookie('id', 'JoTestCookie'); ?>
     <title>Formulaire POST PHP</title>
 </head>
 <body>
+
     
 <!-- Formulaire POST :
  -->        <form action="azzaro.php" method="POST">
+     <p>Quels titres ?</p>
                 <input
                 type="text"
                 name="titre1"
                 placeholder="titre1"
-                value=""
+                value="titre 1 defaut"
                 required
             />
             <input
@@ -31,10 +35,11 @@ setcookie('id', 'JoTestCookie'); ?>
                 placeholder="titre3"
                 value="titre 3 defaut"
             />
+            <p>Que cherchez vous ?</p>
             <input
                 type="text"
                 name="cookie"
-                placeholder="titre3"
+                placeholder="quel produit cherchez-vous ? "
                 value=""
             />
             <input
